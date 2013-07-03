@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+        <style type="text/css">
+        .form-signin {
+        max-width: 700px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        }
+        </style>
+        <script>
+            var numWords = 0
+            function addWord() {
+                numWords++;
+                var newField = document.createElement("span");
+                newField.innerHTML="<p>Word " + numWords + ": <input type=\"text\" name=\"word" + numWords + "\"></p>";
+                document.getElementById("word-list").appendChild(newField);
+            }
+
+            function resetForm() {
+                //resets the form
+                numWords = 1
+                document.getElementById("word-list").innerHTML = "<p>Word 1: <input type=\"text\" name=\"word1\"></p>";
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="masthead">
+                <h3 class="muted">Project name</h3>
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <ul class="nav">
+                                <li><a href="Home.html">Home</a></li>
+                                <li class="active"><a href="#">Projects</a></li>
+                                <li><a href="About.html">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /.navbar -->
+            </div>
+
+            <div class="container">
+                <h1 class="muted">Scrabble Ladder Calculator</h1>
+                <p>This calculates the highest value of a scrabble ladder. Enter the length of the words to be used, the length of the ladder, and the words. <a href="WhatIsAScrabbleladder.html">What is a Scrabble Ladder?</a>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="span6">
+                        <form class="form-signin">
+                            <button type="button" class="btn btn-primary" style="float:right top" onclick="resetForm()">Reset form</button>
+                            <p>Word Length: <input type="text">
+                            </p>
+                            <p>Ladder Length: <input type="text"></p>
+                            <h4>Words</h4>
+                            <span id="word-list">
+                                <script>addWord()</script>
+                            </span>
+                            <button type="button" class="btn btn-primary" onclick="addWord()">Add Word</button>
+                        </form>
+                        <br><br><br><br><br>
+                    </div>
+                    <div class="span6">
+                        <h5 id="highest-value">Highest Value: </h5>
+                        <h5 id="highest-value-ladders">Ladders with this value: </h5>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
