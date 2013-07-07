@@ -55,13 +55,20 @@
 
             <div class="container">
                 <h1 class="muted">Scrabble Ladder Calculator</h1>
-                <p>This calculates the highest value of a scrabble ladder. Enter the length of the words to be used, the length of the ladder, and the words. <a href="WhatIsAScrabbleladder.html">What is a Scrabble Ladder?</a>
+                <p>This calculates the highest value of a scrabble ladder. A scrabble ladder is, according to <a href="">Quora</a>, an list containing an odd number of equal-length words. Each word has only a one-letter difference with the word in front of it and the word behind it. The scrabble score of each word is higher than the preceding word, up until the middle of the list, where each word has a lower scrabble score. Example:</p>
+                <ul>
+                    <li><b>sour</b>, score: 4</li>
+                    <li><b>spur</b>, score: 6</li>
+                    <li><b>spud</b>, score: 7</li>
+                    <li><b>stud</b>, score: 5</li>
+                    <li><b>stun</b>, score: 4</li>
+                </ul>
+                <p>Enter the length of the words to be used, the length of the ladder, and the words.</p>
                 <br>
                 <br>
                 <div class="row">
                     <div class="span6">
                         <form class="form-signin">
-                            <button type="button" class="btn btn-primary" style="float:right top" onclick="resetForm()">Reset form</button>
                             <p>Word Length: <input type="text">
                             </p>
                             <p>Ladder Length: <input type="text"></p>
@@ -70,6 +77,9 @@
                                 <script>addWord()</script>
                             </span>
                             <button type="button" class="btn btn-primary" onclick="addWord()">Add Word</button>
+                            &nbsp&nbsp&nbsp&nbsp
+                            <button class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-primary" style="float:right" onclick="resetForm()">Reset form</button>
                         </form>
                         <br><br><br><br><br>
                     </div>

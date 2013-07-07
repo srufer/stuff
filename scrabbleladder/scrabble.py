@@ -2,7 +2,7 @@ import copy
 
 SCRABBLE_DICTIONARY = ['spur', 'sour', 'spud', 'stud', 'stun', 'a', 'dog', 'terrible', 'hopeless']
 WORD_LENGTH = 4
-LADDER_LENGTH = 1
+LADDER_LENGTH = 5
 
 class Word():
 
